@@ -1,0 +1,561 @@
+/* Reset and base styles */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+body {
+    font-family: "Montserrat", sans-serif !important;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+/* Responsive containers */
+.container-principal {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.container-banner {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Banner and tag */
+.banner {
+    padding: 0.4em 0;
+    background-image: url('../images/pattern-viva.svg');
+    background-color: #2f4eb5;
+}
+
+.tag-compre-agora {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    animation: pulse 2s infinite;
+}
+
+.tag-compre-agora span {
+    color: white;
+    font-size: 0.8rem;
+    background-color: #52b52f;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    box-shadow: 0px 0px 12px 6px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Cota sections - 3 per row always */
+.cotas {
+    margin: 1.8rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.cotas-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.cota-row {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+button.cota {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #2f4eb5;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    padding: 0.8em 0;
+    border-radius: 0.5rem;
+    box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    width: calc(33.333% - 1rem);
+    max-width: 150px;
+    min-height: 120px;
+    margin: 0;
+}
+
+button.cota:hover {
+    background-color: #52b52f;
+    transform: translateY(-3px);
+}
+
+.cota-selected {
+    background-color: #0f8400 !important;
+    box-shadow: 0 0 0 2px white, 0 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+.cota-qtd {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+
+.cota h1 {
+    margin: 0.2rem 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.cota h2 {
+    margin: 0.2rem 0;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+i.destaque {
+    background-color: #52b52f;
+    position: absolute;
+    top: 0.4rem;
+    right: 0.4rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.7rem;
+}
+
+/* Counter section */
+.contador-cotas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2f4eb5 !important;
+    border-radius: 0.7rem;
+    padding: 1rem 1.5rem;
+    margin: 2rem 0;
+}
+
+button.btn-contador-cotas {
+    height: 40px;
+    width: 40px;
+    font-size: 1.5rem;
+    color: white;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+button.btn-contador-cotas:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+input.input-contador-cotas {
+    text-align: center;
+    margin: 0 1.5rem;
+    padding: 0.6rem;
+    border: none;
+    border-radius: 0.6rem;
+    width: 100px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Purchase button */
+button.adc-carrinho {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    background-color: #52b52f;
+    border: none;
+    border-radius: 0.7rem;
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem 0;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+button.adc-carrinho:hover {
+    background-color: #0f8400;
+    transform: translateY(-3px);
+}
+
+button.adc-carrinho:disabled {
+    opacity: 0.6;
+    transform: none !important;
+}
+
+button.adc-carrinho i {
+    font-size: 1.4rem;
+    vertical-align: middle;
+    margin-right: 0.6rem;
+}
+
+/* Hospital cards */
+.hospital {
+    margin: 2.5rem 0;
+    border-top: 1px solid #ececec;
+    padding: 2em 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.card-hospital {
+    padding: 1.8em;
+    border-radius: 0.7em;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, rgba(245,158,11,1) 0%, rgba(191,36,26,1) 100%);
+    margin-bottom: 1.5rem;
+    flex: 1 1 350px;
+    max-width: 500px;
+}
+
+.card-hospital-image {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1.2rem;
+}
+
+.card-hospital-image img {
+    max-width: 180px;
+    height: auto;
+}
+
+.card-hospital-image h2 {
+    font-weight: 600;
+    color: white !important;
+    font-size: 1.2em;
+    margin-top: 1rem;
+}
+
+.card-hospital-text {
+    width: 100%;
+}
+
+.card-hospital-text p {
+    color: white;
+    font-size: 1em;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+.card-hospital-bg-azul {
+    background: linear-gradient(180deg, rgba(14,165,233,1) 0%, rgba(37,99,235,1) 100%) !important;
+}
+
+/* Winners section */
+.ganhadores-section {
+    padding: 2.5rem 0;
+}
+
+.ganhadores-title {
+    color: #2F4EB5;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+}
+
+.ganhadores-subtitle {
+    color: #666666;
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+}
+
+.ganhadores-carousel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.ganhador-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    flex: 1 1 350px;
+    max-width: 400px;
+    transition: transform 0.3s ease;
+}
+
+.ganhador-card:hover {
+    transform: translateY(-8px);
+}
+
+.ganhador-foto {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #2F4BE5;
+    margin-bottom: 1.2rem;
+}
+
+.ganhador-numero {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    color: #00aa55;
+}
+
+.ganhador-nome {
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    font-size: 1.3rem;
+}
+
+.ganhador-cidade {
+    font-style: italic;
+    margin-bottom: 0.8rem;
+    color: #666;
+}
+
+.ganhador-premio {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.ver-mais-btn {
+    display: inline-block;
+    background-color: #00aa55;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 35px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: 2.5rem;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(0,170,85,0.2);
+}
+
+.ver-mais-btn:hover {
+    background-color: #008844;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,170,85,0.3);
+}
+
+/* Footer */
+.rodape {
+    margin-top: 4rem;
+    padding: 2.5rem 0;
+    background-color: #fafafa;
+    text-align: center;
+}
+
+.logo-rodape {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+}
+
+.redes {
+    margin: 2rem 0;
+}
+
+.redes i {
+    color: #2f4eb5;
+    font-size: 1.6rem;
+    margin: 0 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.redes i:hover {
+    color: #52b52f;
+    transform: scale(1.15);
+}
+
+.rodape h1 {
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 1.7;
+    padding: 0 2rem;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.linha-rodape {
+    margin: 2.5rem auto;
+    border-bottom: 4px solid #d1d5db;
+    width: 70%;
+    max-width: 550px;
+}
+
+.patterns-rodape {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.pattern-rodape {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 180px;
+    flex: 1 1 250px;
+}
+
+.pattern-rodape img {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    margin-top: 1rem;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .cota-row {
+        gap: 0.8rem;
+    }
+    
+    button.cota {
+        width: calc(33.333% - 0.8rem);
+        max-width: 130px;
+        min-height: 110px;
+        padding: 0.6em 0;
+    }
+    
+    .cota-qtd {
+        font-size: 1.4rem;
+    }
+    
+    .cota h1, .cota h2 {
+        font-size: 0.85rem;
+    }
+    
+    .card-hospital {
+        padding: 1.5em;
+        flex: 1 1 100%;
+    }
+    
+    .ganhador-card {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .cota-row {
+        gap: 0.6rem;
+    }
+    
+    button.cota {
+        width: calc(33.333% - 0.6rem);
+        max-width: 110px;
+        min-height: 100px;
+        padding: 0.5em 0;
+    }
+    
+    .cota-qtd {
+        font-size: 1.3rem;
+    }
+    
+    .cota h1, .cota h2 {
+        font-size: 0.8rem;
+    }
+    
+    button.adc-carrinho {
+        font-size: 1.1rem;
+        padding: 0.9rem;
+    }
+    
+    .ganhadores-title {
+        font-size: 1.8rem;
+    }
+    
+    .ganhadores-subtitle {
+        font-size: 1rem;
+    }
+    
+    .pattern-rodape {
+        flex: 1 1 100%;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .card-hospital {
+        flex-direction: row;
+        align-items: center;
+        flex: 1 1 45%;
+    }
+    
+    .card-hospital-image {
+        width: 40%;
+        margin-bottom: 0;
+    }
+    
+    .card-hospital-text {
+        width: 60%;
+        padding-left: 2rem;
+    }
+    
+    .ganhador-card {
+        flex: 0 0 calc(33.333% - 2rem);
+        max-width: calc(33.333% - 2rem);
+    }
+}
+
+@media (min-width: 1200px) {
+    .container-principal {
+        padding: 25px 0;
+    }
+    
+    .ganhadores-carousel {
+        justify-content: space-between;
+    }
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400; /* Peso normal */
+  }
+  
+  .italic {
+    font-style: italic;
+    font-weight: 700; /* Negrito itálico */
+  }
+
+  .sorteio-date {
+    margin-top: 20px !important;
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: 768px) {
+    .sorteio-date {
+      margin-top: 30px;
+    }
+  }
