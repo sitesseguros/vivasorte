@@ -990,7 +990,7 @@
     
       // Controle para evitar múltiplas exibições
       let popupShown = false;
-      const popupCooldown = 15000; // 15 segundos de intervalo entre popups
+      const popupCooldown = 400000; // 40 segundos de intervalo entre popups
     
       // Função para mostrar o popup
       function showPopup() {
@@ -1029,11 +1029,11 @@
         }
       });
     
-      // 2. Detecta inatividade (10 segundos sem interação)
+      // 2. Detecta inatividade (40 segundos sem interação)
       let inactivityTimer;
       function resetInactivityTimer() {
         clearTimeout(inactivityTimer);
-        inactivityTimer = setTimeout(showPopup, 10000); // 10 segundos
+        inactivityTimer = setTimeout(showPopup, 400000); // 40 segundos
       }
     
       // Inicia o timer de inatividade
